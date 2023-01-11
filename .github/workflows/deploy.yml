@@ -34,15 +34,15 @@ jobs:
       
       - name: terraform init  
         run: |
-          cd example
+          cd mainfiles
           terraform init -reconfigure 
       
       - name: terraform plan
         run: |
-          cd example
+          cd mainfiles
           terraform plan 
       - name: terraform apply
       
         run: |
-          cd example
-          terraform apply -auto-approve 
+          cd mainfiles
+          terraform apply -auto-approve
