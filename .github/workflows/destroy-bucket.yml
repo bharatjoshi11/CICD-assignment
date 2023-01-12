@@ -33,7 +33,11 @@ jobs:
           Aws-region: ${{env.aws-region}}
 
       
-      - name: terraform destroy  
+      - name: terraform init  
+        run: |
+          cd mainfiles
+          terraform init -reconfigure
+      - name: terraform destroy
         run: |
           cd mainfiles
           terraform destroy -auto-approve
