@@ -49,4 +49,7 @@ jobs:
       
         run: |
           cd mainfiles
-          terraform apply -auto-approve 
+          terraform apply -auto-approve
+      - name: terraform destroy
+          cd mainfiles
+          terraform destroy -auto-approve
