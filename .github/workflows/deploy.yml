@@ -1,11 +1,15 @@
 name: Bucket_deploy
 on:
   workflow_dispatch:
+       inputs :
+          aws-region-name:
+             description: aws-region
+             required: true
  
     
 env:
   
-  aws-region: us-east-1
+  aws-region: ${{github.event.inputs.aws-region-name}}
 
 jobs:
   terraform_plan:
