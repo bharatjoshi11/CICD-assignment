@@ -51,5 +51,7 @@ jobs:
           cd mainfiles
           terraform apply -auto-approve
       - name: terraform destroy
+        
+        run: |
           cd mainfiles
           terraform destroy -auto-approve
