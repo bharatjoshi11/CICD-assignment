@@ -5,6 +5,8 @@ on:
  
     
 env:
+  buck: teststorage1983
+  TFSTATE_FILE: bucket.tfstate
   
   aws-region: us-east-1
 
@@ -36,7 +38,7 @@ jobs:
       - name: terraform init  
         run: |
           cd mainfiles
-          terraform init -reconfigure
+          terraform init -reconfigure -backend-config="bucket=${{env.BUCKET}}" -backend-config="key=${{env.TFSTATE_FILE}}"
       - name: terraform destroy
         run: |
           cd mainfiles
